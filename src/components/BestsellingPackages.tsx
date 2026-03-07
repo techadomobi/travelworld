@@ -56,7 +56,7 @@ export default function BestsellingPackages() {
           <p className="text-gray-600 text-lg">Handpicked experiences for unforgettable journeys</p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {packages.map((pkg) => (
             <div
               key={pkg.id}
