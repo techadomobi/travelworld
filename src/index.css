@@ -1,3 +1,97 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Custom Responsive Enhancements */
+@layer components {
+  /* Improved mobile typography */
+  .text-responsive-4xl {
+    @apply text-3xl sm:text-4xl lg:text-5xl;
+  }
+  
+  .text-responsive-2xl {
+    @apply text-xl sm:text-2xl lg:text-3xl;
+  }
+  
+  .text-responsive-lg {
+    @apply text-base sm:text-lg lg:text-xl;
+  }
+  
+  /* Better mobile spacing */
+  .section-spacing {
+    @apply py-12 sm:py-16 lg:py-20;
+  }
+  
+  .card-spacing {
+    @apply p-4 sm:p-6 lg:p-8;
+  }
+  
+  /* Mobile-friendly buttons */
+  .btn-responsive {
+    @apply px-4 py-2 sm:px-6 sm:py-3 text-sm sm:text-base;
+  }
+  
+  /* Improved mobile navigation */
+  .mobile-nav-item {
+    @apply block py-3 px-4 text-base font-medium border-b border-gray-100 hover:bg-gray-50;
+  }
+  
+  /* Better mobile image handling */
+  .hero-image {
+    @apply object-cover object-center;
+  }
+  
+  /* Mobile-friendly form inputs */
+  .input-responsive {
+    @apply w-full px-3 py-3 sm:px-4 sm:py-3 text-sm sm:text-base;
+  }
+  
+  /* Smooth transitions for mobile */
+  .transition-responsive {
+    @apply transition-all duration-300 ease-in-out;
+  }
+  
+  /* Mobile-first grid improvements */
+  .grid-responsive {
+    @apply grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6 lg:gap-8;
+  }
+}
+
+/* Custom utilities for touch devices */
+@layer utilities {
+  .touch-target {
+    min-height: 44px; /* Apple's recommended minimum touch target */
+    min-width: 44px;
+  }
+  
+  .focus-visible {
+    outline: 2px solid #3b82f6;
+    outline-offset: 2px;
+  }
+}
+
+/* Responsive text sizing for better readability */
+@media (max-width: 640px) {
+  html {
+    font-size: 16px;
+  }
+  
+  h1, h2, h3 {
+    line-height: 1.2;
+  }
+  
+  .leading-tight {
+    line-height: 1.3;
+  }
+}
+
+/* Better mobile performance */
+@media (max-width: 768px) {
+  .group-hover\:scale-110 {
+    transition: transform 0.3s ease;
+  }
+  
+  .group:hover .group-hover\:scale-110 {
+    transform: scale(1.05);
+  }
+}
