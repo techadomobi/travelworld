@@ -1,15 +1,16 @@
 import { useState } from 'react';
 import { Phone, Mail, MapPin, Menu, X } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
-export default function Header() {
+export default function Header({ isScrolled = false }: { isScrolled?: boolean }) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const navigation = [
-    { name: 'Home', href: '#' },
-    { name: 'Destinations', href: '#' },
-    { name: 'Tours', href: '#' },
-    { name: 'About Us', href: '#' },
-    { name: 'Contact', href: '#' },
+    { name: 'Home', href: '/' },
+    { name: 'Destinations', href: '/destinations' },
+    { name: 'Packages', href: '/packages' },
+    { name: 'About Us', href: '/about' },
+    { name: 'Contact', href: '/contact' },
   ];
 
   return (
@@ -45,18 +46,21 @@ export default function Header() {
           <ul className="hidden md:flex gap-6 lg:gap-8 items-center">
             {navigation.map((item) => (
               <li key={item.name}>
-                <a 
-                  href={item.href} 
+                <Link 
+                  to={item.href} 
                   className="text-gray-700 hover:text-blue-900 font-medium transition-colors duration-200"
                 >
                   {item.name}
-                </a>
+                </Link>
               </li>
             ))}
             <li>
-              <button className="bg-amber-500 text-white px-4 sm:px-6 py-2 rounded-md hover:bg-amber-600 transition-colors duration-200 font-medium text-sm sm:text-base">
+              <Link 
+                to="/packages" 
+                className="bg-amber-500 text-white px-4 sm:px-6 py-2 rounded-md hover:bg-amber-600 transition-colors duration-200 font-medium text-sm sm:text-base"
+              >
                 Book Now
-              </button>
+              </Link>
             </li>
           </ul>
 
@@ -82,19 +86,23 @@ export default function Header() {
           <ul className="space-y-3">
             {navigation.map((item) => (
               <li key={item.name}>
-                <a 
-                  href={item.href} 
+                <Link 
+                  to={item.href} 
                   className="block text-gray-700 hover:text-blue-900 font-medium transition-colors duration-200 py-2"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   {item.name}
-                </a>
+                </Link>
               </li>
             ))}
             <li className="pt-2">
-              <button className="w-full bg-amber-500 text-white px-4 py-2 rounded-md hover:bg-amber-600 transition-colors duration-200 font-medium text-sm text-center">
+              <Link 
+                to="/packages" 
+                className="block w-full bg-amber-500 text-white px-4 py-2 rounded-md hover:bg-amber-600 transition-colors duration-200 font-medium text-sm text-center"
+                onClick={() => setIsMenuOpen(false)}
+              >
                 Book Now
-              </button>
+              </Link>
             </li>
           </ul>
         </div>

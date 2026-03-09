@@ -102,7 +102,7 @@ export default function BestsellingPackages() {
 
                 <div className="flex items-center justify-between pt-4 border-t">
                   <div>
-                    <span className="text-2xl font-bold text-blue-900">₹{pkg.price * 83}</span>
+                    <span className="text-2xl font-bold text-blue-900">${pkg.price}</span>
                     <span className="text-gray-500 text-sm"> /person</span>
                   </div>
                   <button className="bg-amber-500 text-white px-4 py-2 rounded-md hover:bg-amber-600 transition font-medium text-sm">

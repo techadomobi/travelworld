@@ -1,4 +1,5 @@
 import { Facebook, Twitter, Instagram, Youtube, Mail, Phone, MapPin } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 export default function Footer() {
   return (
@@ -11,16 +12,16 @@ export default function Footer() {
               Your trusted partner for unforgettable travel experiences around the globe. Discover, explore, and create memories that last a lifetime.
             </p>
             <div className="flex gap-4">
-              <a href="#" className="bg-blue-600 p-2 rounded-full hover:bg-blue-700 transition">
+              <a href="https://facebook.com/travelworld" target="_blank" rel="noopener noreferrer" className="bg-blue-600 p-2 rounded-full hover:bg-blue-700 transition">
                 <Facebook className="w-5 h-5" />
               </a>
-              <a href="#" className="bg-blue-400 p-2 rounded-full hover:bg-blue-500 transition">
+              <a href="https://twitter.com/travelworld" target="_blank" rel="noopener noreferrer" className="bg-blue-400 p-2 rounded-full hover:bg-blue-500 transition">
                 <Twitter className="w-5 h-5" />
               </a>
-              <a href="#" className="bg-pink-600 p-2 rounded-full hover:bg-pink-700 transition">
+              <a href="https://instagram.com/travelworld" target="_blank" rel="noopener noreferrer" className="bg-pink-600 p-2 rounded-full hover:bg-pink-700 transition">
                 <Instagram className="w-5 h-5" />
               </a>
-              <a href="#" className="bg-red-600 p-2 rounded-full hover:bg-red-700 transition">
+              <a href="https://youtube.com/travelworld" target="_blank" rel="noopener noreferrer" className="bg-red-600 p-2 rounded-full hover:bg-red-700 transition">
                 <Youtube className="w-5 h-5" />
               </a>
             </div>
@@ -29,24 +30,24 @@ export default function Footer() {
           <div>
             <h4 className="text-lg font-semibold mb-4">Quick Links</h4>
             <ul className="space-y-2">
-              <li><a href="#" className="text-gray-400 hover:text-white transition">About Us</a></li>
-              <li><a href="#" className="text-gray-400 hover:text-white transition">Destinations</a></li>
-              <li><a href="#" className="text-gray-400 hover:text-white transition">Tour Packages</a></li>
-              <li><a href="#" className="text-gray-400 hover:text-white transition">Special Offers</a></li>
-              <li><a href="#" className="text-gray-400 hover:text-white transition">Travel Blog</a></li>
-              <li><a href="#" className="text-gray-400 hover:text-white transition">Contact Us</a></li>
+              <li><Link to="/about" className="text-gray-400 hover:text-white transition">About Us</Link></li>
+              <li><Link to="/destinations" className="text-gray-400 hover:text-white transition">Destinations</Link></li>
+              <li><Link to="/packages" className="text-gray-400 hover:text-white transition">Tour Packages</Link></li>
+              <li><Link to="/blog" className="text-gray-400 hover:text-white transition">Special Offers</Link></li>
+              <li><Link to="/blog" className="text-gray-400 hover:text-white transition">Travel Blog</Link></li>
+              <li><Link to="/contact" className="text-gray-400 hover:text-white transition">Contact Us</Link></li>
             </ul>
           </div>
 
           <div>
             <h4 className="text-lg font-semibold mb-4">Services</h4>
             <ul className="space-y-2">
-              <li><a href="#" className="text-gray-400 hover:text-white transition">Flight Booking</a></li>
-              <li><a href="#" className="text-gray-400 hover:text-white transition">Hotel Reservations</a></li>
-              <li><a href="#" className="text-gray-400 hover:text-white transition">Visa Assistance</a></li>
-              <li><a href="#" className="text-gray-400 hover:text-white transition">Travel Insurance</a></li>
-              <li><a href="#" className="text-gray-400 hover:text-white transition">Car Rentals</a></li>
-              <li><a href="#" className="text-gray-400 hover:text-white transition">Cruise Packages</a></li>
+              <li><Link to="/packages" className="text-gray-400 hover:text-white transition">Flight Booking</Link></li>
+              <li><Link to="/packages" className="text-gray-400 hover:text-white transition">Hotel Reservations</Link></li>
+              <li><Link to="/contact" className="text-gray-400 hover:text-white transition">Visa Assistance</Link></li>
+              <li><Link to="/contact" className="text-gray-400 hover:text-white transition">Travel Insurance</Link></li>
+              <li><Link to="/packages" className="text-gray-400 hover:text-white transition">Car Rentals</Link></li>
+              <li><Link to="/packages" className="text-gray-400 hover:text-white transition">Cruise Packages</Link></li>
             </ul>
           </div>
 
@@ -70,9 +71,16 @@ export default function Footer() {
         </div>
 
         <div className="border-t border-gray-800 pt-8 text-center">
-          <p className="text-gray-400">
-            &copy; 2024 TravelWorld. All rights reserved. | Privacy Policy | Terms & Conditions
-          </p>
+          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
+            <p className="text-gray-400">
+              &copy; 2024 TravelWorld. All rights reserved.
+            </p>
+            <div className="flex gap-6 text-gray-400">
+              <Link to="/terms" className="hover:text-white transition">Privacy Policy</Link>
+              <Link to="/terms" className="hover:text-white transition">Terms & Conditions</Link>
+              <Link to="/contact" className="hover:text-white transition">Support</Link>
+            </div>
+          </div>
         </div>
       </div>
     </footer>
